@@ -66,4 +66,15 @@ def login():
 
 @app.route('/secret')
 def secret():
-    return 'You made it!'
+    if "user" not in session:
+        flash("You must be logged in to view!")
+        return redirect("/")
+    else:
+        return 'You made it!'
+
+@app.route("/logout")
+def logout():
+
+    session.pop("user")
+
+    return redirect("/")
