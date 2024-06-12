@@ -1,7 +1,7 @@
-{% extends 'base.html' %} {% block title %}Register{% endblock %} {% block
+{% extends 'base.html' %} {% block title %}Feedback{% endblock %} {% block
 content %}
 
-<h1>Register</h1>
+<h1>Feedback Form</h1>
 <hr />
 <div class="row">
   <form method="POST">
@@ -14,8 +14,8 @@ content %}
       {% endfor %}
     </div>
     {% endfor %}
-    <button class="btn btn-success btn">Register</button>
-    <a href="/login" class="btn btn-secondary btn">Login</a>
+    <button class="btn btn-success btn">Submit</button>
+    <a href="/users/{{username}}" class="btn btn-secondary btn">Go Back</a>
   </form>
 </div>
 {% endblock %}

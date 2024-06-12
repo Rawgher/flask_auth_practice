@@ -14,10 +14,9 @@
   <body>
     <section class="container">
       <div> 
-        {% with messages = get_flashed_messages() %} {% if messages %} {% for msg
-        in messages %}
-        <p>{{ msg }}</p>
-        {% endfor %} {% endif %} {% endwith %}
+        {% for category, msg in get_flashed_messages(with_categories=True) %}
+            <div class="alert alert-{{category}}">{{ msg }}</div>
+        {% endfor %}
           {% block content %}BODY CONTENT GOES HERE{% endblock %}
         </div>
       </div>
